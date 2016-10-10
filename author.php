@@ -6,31 +6,32 @@
  */
 ?>
 <?php get_header() ?>
-<div class="archive-meta-container">
-    <div class="archive-head">
-        <h1 class="page-title author"><?php _e('Author Archives', 'afford') ?></h1>
-    </div>
-    <div class="archive-description">
-        <?php
-        if (get_the_author_meta('description')) :
-            printf('%s', "<p>" . get_the_author_meta('description') . "</p>");
-        else :
-            printf(__('Archive of the posts written by author :', 'afford').' %s.', get_the_author());
-        endif;
-        ?>
-    </div>
-</div><!-- Archive Meta Container ends -->
 
 <div id="content-section" class="content-section content-wrap">
 
     <?php get_sidebar() ?>
 
     <div class="inner-content-section">
+
+        <div class="author-info-box">
+            <div class="count">
+                <?php printf('%s', "<strong>" . get_the_author() . "</strong>") ?>共有<span><?php printf(count_user_posts(get_the_author_meta( 'ID' ), 'post')) ?></span>篇文章
+            </div>
+            <div class="author-info">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
+                <p>
+                    <?php printf('%s', "<strong>" . get_the_author() . "</strong>") ?>
+
+                    <?php printf('%s', "<span>" . get_the_author_meta('description') . "</span>") ?>
+                </p>
+            </div>
+
+        </div>
         
               <?php if ( have_posts() ) : the_post() ?>
 
 
-                    <ul class="loop-container-section clearfix">
+                    <ul class="post-list clearfix">
 
                         <?php
                             // Here starts the loop

@@ -32,14 +32,14 @@ global $afford_loop_count;
       <span class="loop-meta-comments"><?php comments_popup_link( __('没有评论', 'afford'), __('1 评论', 'afford'), '% '.__('评论', 'afford'), 'comments-link', __('No Comments','afford')); ?></span>
       <?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __('Pages:', 'afford') . '</span>', 'after' => '</div>')) ?>
 -->
-<span class="zan">
-<i class="icon-wifi_tethering"></i>
-<?php if( get_post_meta($post->ID,'specs_zan',true) ){
-                echo get_post_meta($post->ID,'specs_zan',true);
-                } else {
-          echo '0';
-        }?>
- 点赞
+      <span class="zan">
+        <i class="icon-wifi_tethering"></i>
+        <?php if( get_post_meta($post->ID,'specs_zan',true) ){
+                        echo get_post_meta($post->ID,'specs_zan',true);
+                        } else {
+                  echo '0';
+                }?>
+         点赞
       </span>
       <span class="read"><?php post_views(' ', '阅读'); ?></span>
     </div>

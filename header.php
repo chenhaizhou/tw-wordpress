@@ -32,10 +32,7 @@
     <div id="wrapper" class="wrapper">
         <?php if(!afford_get_option('disable_header')): ?>
             <header class="header">
-                <div class="banner" style="background-image:url(<?php header_image(); ?>); height:<?php echo get_custom_header()->height; ?>px">
-                <!--
-                    <img alt="" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" class="header-image" height="<?php echo get_custom_header()->height; ?>" />
-                    -->
+                <div class="banner">
                     <div class="logo">
                         <?php afford_logo() ?>
                     </div>

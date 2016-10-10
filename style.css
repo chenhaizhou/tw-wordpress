@@ -562,10 +562,22 @@ footer {
 
 .banner {
   position: relative;
-  height: 255px;
+  height: 215px;
   text-align: center;
   background-size: cover;
   color: #fff;
+}
+
+.home .banner {
+  background-image: url(./images/bg1.png);
+}
+
+.single .banner {
+  background-image: url(./images/bg2.png);
+}
+
+.author .banner {
+  background-image: url(./images/bg3.png);
 }
 
 .content-wrap {
@@ -601,7 +613,7 @@ footer {
 
 .site-title a {
   display: inline-block;
-  font-size: 4.8rem;
+  font-size: 8rem;
   font-weight: bold;
   line-height: 1;
   letter-spacing: 0px;
@@ -609,6 +621,7 @@ footer {
 }
 
 .site-description {
+  display: none;
   margin-top: 15px;
   font-size: 1.6rem;
   letter-spacing: .8rem;
@@ -716,14 +729,14 @@ nav .search-wrap .icon-search {
 }
 
 .post-list {
-  margin: 30px -2% 30% 0;
+  margin: 30px 0;
 }
 
 .post-list .post-item {
   box-sizing: border-box;
   float: left;
-  width: 29%;
-  margin: 10px 2%;
+  width: 23%;
+  margin: 10px 0 10px 2%;
   background-color: #F8F9F9;
 }
 
@@ -788,9 +801,126 @@ nav .search-wrap .icon-search {
   font-size: 1.2rem;
 }
 
-.post-list .avatar {
+.avatar {
   vertical-align: middle;
   border-radius: 50%;
+}
+
+.post-wrap {
+  margin-top: 40px;
+  margin-left: 2%;
+}
+
+.post-wrap .post-title h1 {
+  position: relative;
+}
+
+.post-wrap .post-title h1::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 0;
+  top: 50%;
+  margin-top: -1px;
+  border-top: 2px solid #AD383B;
+}
+
+.post-wrap .post-title h1 strong {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding-right: 10px;
+}
+
+.post-wrap .post-meta span {
+  color: #999;
+}
+
+.post-wrap .post-content {
+  font-size: 1.2rem;
+  line-height: 160%;
+}
+
+.post-wrap .post-nav {
+  display: none;
+}
+
+.comments-section {
+  margin-left: 2%;
+  font-size: 1.2rem;
+}
+
+.comments-section textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.comments-section .form-submit {
+  text-align: right;
+}
+
+.comments-section .form-submit .submit {
+  margin: 0;
+  padding: 5px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
+}
+
+.comments-section .comments-title h4 {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  line-height: 160%;
+  color: #189353;
+}
+
+.commentslist > ol {
+  border-top: 1px solid #bbb;
+}
+
+.commentslist .comment {
+  padding: 15px 0;
+  border-bottom: 1px solid #bbb;
+}
+
+.commentslist .comment-date a {
+  color: #189353;
+}
+
+.commentslist .comment-author {
+  text-align: center;
+}
+
+.commentslist .comment-info-container {
+  float: left;
+  width: 60px;
+}
+
+.commentslist .comment-info-container cite {
+  display: block;
+  padding-top: 10px;
+  font-style: normal;
+}
+
+.commentslist .comment-body-container {
+  margin-left: 80px;
+}
+
+.commentslist .comment-option {
+  text-align: right;
+}
+
+.commentslist .comment-option a {
+  color: #189353;
+}
+
+.commentslist .comment-reply, .commentslist .comment-edit {
+  display: inline;
+  margin-left: 10px;
 }
 
 aside {
@@ -861,7 +991,50 @@ aside .widget.widget_recent_entries li {
   cursor: not-allowed;
 }
 
+.author-info-box {
+  width: 60%;
+  margin: 40px auto 10px;
+}
+
+.author-info-box .count {
+  font-size: 24px;
+  color: #D85491;
+  text-align: center;
+}
+
+.author-info-box .avatar {
+  float: left;
+  border-radius: 50%;
+}
+
+.author-info-box .author-info {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.author-info-box .author-info strong {
+  font-weight: bold;
+}
+
+.author-info-box p {
+  margin-left: 100px;
+}
+
+.footer-bg-section {
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+}
+
 @media only screen and (max-width: 768px) {
+  .banner {
+    background-size: contain;
+  }
   .post-list .post-item {
     width: 96%;
   }

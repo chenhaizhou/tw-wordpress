@@ -80,12 +80,12 @@ function afford_setup() {
 
     add_theme_support( 'custom-background' );
 
-        $args = array(
-            'width'         => 2000,
-            'height'        => 250,
-            'default-image' => get_template_directory_uri() . '/images/header-image.jpeg',
-        );
-        add_theme_support( 'custom-header', $args );
+    $args = array(
+        'width'         => 2000,
+        'height'        => 215,
+        'default-image' => get_template_directory_uri() . '/images/header-image.jpeg',
+    );
+    add_theme_support( 'custom-header', $args );
 }
 add_action( 'after_setup_theme', 'afford_setup' );
 
@@ -527,7 +527,11 @@ function afford_logo() {
             <div class="site-name">
                 <a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ) . ' | ' . esc_attr( get_bloginfo('description') ) ?>" rel="home"><?php echo esc_html(get_bloginfo( 'name', 'display' )) ?></a>
             </div>
-            <?php if(!afford_get_option('disable_site_desc')): ?><div id="site-description" class="site-description"><span><?php echo esc_html( get_bloginfo( 'description' ) ) ?></span></div><?php endif ?>
+            <?php
+            $description = get_bloginfo( 'description', 'display' );
+            if ( $description || is_customize_preview() ) : ?>
+
+            <div id="site-description" class="site-description"><span><?php echo esc_html( get_bloginfo( 'description' ) ) ?></span></div><?php endif ?>
         </div>
 	<?php else: ?>
         <div id="site-title" class="site-title">
@@ -558,23 +562,25 @@ function afford_comment_callback( $comment, $args, $depth ) {
         <?php $afford_is_comment_reply = get_comment($afford_get_comment_ID)->comment_parent ?>
         <?php $afford_the_comment_author = get_comment_author(get_comment($afford_get_comment_ID)->comment_parent) ?>
 
-      <div id="comment-<?php comment_ID(); ?>" class="comment-block-container grid-float-left grid-col-16">
+      <div id="comment-<?php comment_ID(); ?>" class="comment-block-container clearfix">
           
           
-                     <div class="comment-info-container grid-col-4 grid-float-left">
+                     <div class="comment-info-container">
                           <div class="comment-author vcard">
-                              <div class="comment-author-avatar-container"><?php echo get_avatar($comment, 125); ?></div>
+                              <div class="comment-author-avatar-container"><?php echo get_avatar($comment, 32); ?></div>
                               <div class="comment-author-info-container">
                                   <div class="comment-author-name"><?php printf('%s <span class="says"></span>', sprintf('<cite class="fn">%s</cite>', get_comment_author_link())) ?></div>
-                                  <div class="comment-meta comment-date"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">(<?php printf('%1$s '.__('ago', 'afford'), human_time_diff(get_comment_time( 'U' ), current_time( 'timestamp' ))); ?>)</a></div>
                               </div>
                           </div><!-- .comment-author .vcard -->
                      </div>
           
-                     <div class="comment-body-container grid-col-12 grid-float-left">
+                     <div class="comment-body-container">
+                        <div class="comment-meta comment-date"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>"><?php printf('%1$s '.__('ago', 'afford'), human_time_diff(get_comment_time( 'U' ), current_time( 'timestamp' ))); ?></a></div>
                         <div class="comment-body"><?php comment_text(); ?></div>
-                        <div class="reply"><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></div>
-                        <?php edit_comment_link(__('(Edit)', 'afford'), '<div class="comment-edit">', '</div>');?>
+                        <div class="comment-option">
+                            <div class="comment-reply"><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></div>
+                            <?php edit_comment_link(__('(Edit)', 'afford'), '<div class="comment-edit">', '</div>');?>
+                        </div>
                      </div>
 
       </div><!-- #comment-##  -->
