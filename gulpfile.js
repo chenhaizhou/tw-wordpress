@@ -12,13 +12,13 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function() {
-  return gulp.src('dev/js/*.js')
+  return gulp.src('assets/**/*.js')
     .pipe(jshint('.jshintrc')) // https://github.com/jshint/jshint/blob/master/examples/.jshintrc
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(gulp.dest('assets/js'));
 });
 
-gulp.task('zip', ['css', 'js'], function() {
+gulp.task('zip', ['css'], function() {
     return gulp.src(['./*.+(php|css|txt|png)', './assets', './images', './includes', './languages'])
         .pipe(zip('tw.zip'))
         .pipe(gulp.dest('dist'));
@@ -34,5 +34,5 @@ gulp.task('watch', function() {
   gulp.watch('dev/scss/**/*.scss', ['css']);
 
   // Watch .js files
-  gulp.watch('dev/js/*.js', ['js']);
+  gulp.watch('assets/**/*.js', ['js']);
 });

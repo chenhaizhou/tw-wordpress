@@ -7,5 +7,5 @@
    1. npm install
    2. gulp zip
 
-2. Login wordpress and upload zip file.
+2. Login wordpress and upload zip file(./dist/tw.zip).
 3. Apply this theme.
