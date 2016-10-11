@@ -19,7 +19,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('zip', ['css'], function() {
-    return gulp.src(['./*.+(php|css|txt|png)', './assets', './images', './includes', './languages'])
+    return gulp.src(['./**', '!./node_modules/','!./node_modules/**','!./dev/', '!./dev/**', '!./gulpfile.js', '!./package.json', '!./dist','!./dist/**'])
         .pipe(zip('tw.zip'))
         .pipe(gulp.dest('dist'));
 });
