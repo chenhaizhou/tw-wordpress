@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="comments" class="comments-section clearfix">
+<div id="comments" class="comments-section">
 
 <?php if (post_password_required() ): ?>
       <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments', 'afford' ) ?></p>
@@ -18,10 +18,10 @@
       <?php if ( have_comments() ): ?>
 
             <div id="comments-title" class="comments-title"><?php
-                      printf( __( '<h4>发表评论</h4>', 'afford' ).' (%1$s)', number_format_i18n( get_comments_number() ));
+                      printf( __( '<h4>最新评论</h4>', 'afford' ).' (%1$s)', number_format_i18n( get_comments_number() ));
             ?></div>
 
-            <div class="commentslist clearfix">
+            <div class="commentslist">
                 <ol>
                     <?php wp_list_comments( array( 'callback' => 'afford_comment_callback' ) ); ?>
                 </ol>

@@ -528,6 +528,7 @@ textarea {
 
 html, body {
   font-size: 62.5%;
+  font-family: "Open Sans", "sans serif", "微软雅黑", "Microsoft YaHei";
 }
 
 $side-width: 220px;
@@ -586,7 +587,7 @@ footer {
 
 .banner {
   position:relative;
-  height: 215px;
+  height: 108px;
   text-align: center;
   background-size: cover;
   color: #fff;
@@ -611,7 +612,7 @@ $banner-page: ("home": 1, "single": 2, "author": 3);
     display: block;
     position: absolute;
     top: 50%;
-    margin-top: -50px;
+    margin-top: -20px;
     left: 0;
     right: 0;
   }
@@ -636,7 +637,7 @@ $banner-page: ("home": 1, "single": 2, "author": 3);
     }
     a {
       display: inline-block;
-      font-size: 8rem;
+      font-size: 4rem;
       font-weight: bold;
       line-height: 1;
       letter-spacing: 0px;
@@ -763,8 +764,10 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     padding-bottom: 0;
   }
   .post-content {
-    padding-top: 0;
     color: #666;
+    p:first-child {
+      margin-top: 0;
+    }
   }
   .footer-bar {
     overflow: hidden;
@@ -783,13 +786,25 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     }
   }
   .author {
-    color: #f52;
+    color: #999;
     font-size: 1.2rem;
+    font-weight: normal;
+    a {
+      color: #999;
+    }
+  }
+
+  .loop-post-meta {
+    time {
+      font-size: 1.2rem;
+      color: #999;
+    }
   }
   
   p {
     margin: 10px 0;
     font-size: 1.2rem;
+    line-height: 1.6;
   }
 }
 
@@ -862,6 +877,11 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
       color: #189353;
     }
   }
+  .comment-reply-title {
+    font-size: 1.6rem;
+    line-height: 160%;
+    color: #189353;
+  }
 }
 
 .commentslist {
@@ -880,8 +900,8 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
   .comment-author {
     text-align: center;
   }
-  .comment-block-container {
-
+  .comment-body {
+    color: #666;
   }
   .comment-info-container {
     float: left;
@@ -976,7 +996,7 @@ aside {
   width: 60%;
   margin: 40px auto 10px;
   .count {
-    font-size: 24px;
+    font-size: 2.4rem;
     color: #D85491;
     text-align: center;
   }
@@ -989,13 +1009,29 @@ aside {
     padding-top:10px;
     border-top: 1px solid #ddd;
     overflow:hidden;
-    font-size: 12px;
+    font-size: 1.2rem;
     strong {
       font-weight: bold;
     }
   }
   p {
     margin-left: 100px;
+  }
+}
+
+article.post-wrap {
+  .post-meta {
+    font-size: 1.2rem;
+    .face {
+      margin-right: 10px;
+    }
+    a {
+      color: #999;
+    }
+  }
+  .post-below-content {
+    font-size: 1.2rem;
+    color: #999;
   }
 }
 

@@ -33,6 +33,7 @@
                             echo '<span class="entry-date">'.get_the_date('Y.m.d').'</span>';
                             
 
+                            /*
                             if(!comments_open()) { // Comments not open
                                 if(get_comments_number()){ // Comments are more than zero
                                     echo '<span class="post-meta-comments">'.get_comments_number(). ' '. __('Comments (Closed)', 'afford').'</span>';
@@ -43,7 +44,9 @@
                                 echo '<span class="post-meta-comments">';
                                 comments_number( '<a href='.get_comments_link().'>'.__('Leave a reply', 'afford').'</a>', __('1 Comment', 'afford'), '% '.__('Comments', 'afford') );
                                 echo '</span>';
-                            } ?>
+                            } 
+                            */
+                            ?>
                         </div>
                         
                     </div>
@@ -52,7 +55,7 @@
                          <?php the_content() ?>
                          <?php wp_link_pages(array('before' => '<div class="post-nav-link"><span>' . __('Pages:', 'afford') . '</span>', 'after' => '</div>')) ?>
 
-                         -----------------
+                         <!-- like -->
                          <div class="post-like">
                             <a href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="specsZan <?php if(isset($_COOKIE['specs_zan_'.$post->ID])) echo 'done';?>">喜欢 <span class="count">
                                 <?php if( get_post_meta($post->ID,'specs_zan',true) ){
@@ -62,7 +65,7 @@
                                 }?></span>
                             </a>
                         </div>
-                        -------------------
+                        <!-- like end -->
                     </div>
 
                     <div class="post-below-content">

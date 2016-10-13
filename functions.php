@@ -82,7 +82,7 @@ function afford_setup() {
 
     $args = array(
         'width'         => 2000,
-        'height'        => 215,
+        'height'        => 108,
         'default-image' => get_template_directory_uri() . '/images/header-image.jpeg',
     );
     add_theme_support( 'custom-header', $args );
@@ -562,7 +562,7 @@ function afford_comment_callback( $comment, $args, $depth ) {
         <?php $afford_is_comment_reply = get_comment($afford_get_comment_ID)->comment_parent ?>
         <?php $afford_the_comment_author = get_comment_author(get_comment($afford_get_comment_ID)->comment_parent) ?>
 
-      <div id="comment-<?php comment_ID(); ?>" class="comment-block-container clearfix">
+      <div id="comment-<?php comment_ID(); ?>" class="comment-block-container">
           
           
                      <div class="comment-info-container">
