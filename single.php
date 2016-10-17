@@ -53,7 +53,23 @@
 
                     <div class="post-content">
                          <?php the_content() ?>
+
+                         <div class="post-count">
+                             <span class="zan">
+                                <i class="icon-heart"></i>
+                                <?php if( get_post_meta($post->ID,'specs_zan',true) ){
+                                                echo get_post_meta($post->ID,'specs_zan',true);
+                                                } else {
+                                          echo '0';
+                                        }?>
+                                 点赞
+                              </span>
+                              <span class="read"><?php post_views(' ', '阅读'); ?></span>
+                         </div>
+
                          <?php wp_link_pages(array('before' => '<div class="post-nav-link"><span>' . __('Pages:', 'afford') . '</span>', 'after' => '</div>')) ?>
+
+
 
                          <!-- like -->
                          <div class="post-like">

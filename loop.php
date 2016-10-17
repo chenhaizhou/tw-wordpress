@@ -33,7 +33,7 @@ global $afford_loop_count;
       <?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __('Pages:', 'afford') . '</span>', 'after' => '</div>')) ?>
 -->
       <span class="zan">
-        <i class="icon-wifi_tethering"></i>
+        <i class="icon-heart"></i>
         <?php if( get_post_meta($post->ID,'specs_zan',true) ){
                         echo get_post_meta($post->ID,'specs_zan',true);
                         } else {

@@ -452,11 +452,11 @@ textarea {
 /*     ------font icon---------    */
 @font-face {
   font-family: 'tw';
-  src:  url('./assets/fonts/tw.eot?d0ufa5');
-  src:  url('./assets/fonts/tw.eot?d0ufa5#iefix') format('embedded-opentype'),
-    url('./assets/fonts/tw.ttf?d0ufa5') format('truetype'),
-    url('./assets/fonts/tw.woff?d0ufa5') format('woff'),
-    url('./assets/fonts/tw.svg?d0ufa5#tw') format('svg');
+  src:  url('assets/fonts/tw.eot?b3zg3o');
+  src:  url('assets/fonts/tw.eot?b3zg3o#iefix') format('embedded-opentype'),
+    url('assets/fonts/tw.ttf?b3zg3o') format('truetype'),
+    url('assets/fonts/tw.woff?b3zg3o') format('woff'),
+    url('assets/fonts/tw.svg?b3zg3o#tw') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -476,50 +476,26 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search2:before {
-  content: "\f002";
-}
-.icon-th-list:before {
-  content: "\f00b";
-}
-.icon-book2:before {
-  content: "\f02d";
-}
-.icon-home:before {
-  content: "\e88a";
-}
 .icon-info:before {
-  content: "\e88e";
-}
-.icon-storage:before {
-  content: "\e1db";
-}
-.icon-wifi_tethering:before {
-  content: "\e1e2";
-}
-.icon-bookmark:before {
   content: "\e900";
 }
-.icon-home2:before {
+.icon-news:before {
   content: "\e901";
 }
-.icon-podcast:before {
-  content: "\e91c";
+.icon-heart:before {
+  content: "\e902";
+}
+.icon-target:before {
+  content: "\e903";
+}
+.icon-home:before {
+  content: "\e904";
 }
 .icon-book:before {
-  content: "\e91f";
-}
-.icon-books:before {
-  content: "\e920";
-}
-.icon-price-tags:before {
-  content: "\e936";
+  content: "\e905";
 }
 .icon-search:before {
-  content: "\e986";
-}
-.icon-list:before {
-  content: "\e9ba";
+  content: "\f002";
 }
 
 
@@ -570,8 +546,8 @@ footer {
 .content-section {
   overflow: hidden;
   .inner-content-section, aside {
-    padding-bottom: 1000px;
-    margin-bottom: -1000px;
+    padding-bottom: 3000px;
+    margin-bottom: -3000px;
   }
 }
 
@@ -630,9 +606,7 @@ $banner-page: ("home": 1, "single": 2, "author": 3);
     .site-name {
       color: #fff;
       a {
-        //padding: 0 40px;
-        //border: 3px solid #fff;
-        //border-radius: 50px;
+        text-transform: uppercase;
       }
     }
     a {
@@ -722,7 +696,9 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
       text-decoration: none;
       i {
         margin-right: 5px;
-        vertical-align: middle;
+        &::before {
+          vertical-align: middle;
+        }
       }
     }
     @for $i from 1 through 5 {
@@ -765,6 +741,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
   }
   .post-content {
     color: #666;
+    font-size: 1.4rem;
     p:first-child {
       margin-top: 0;
     }
@@ -783,6 +760,10 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     }
     .read {
       float: right;
+    }
+    .icon-heart {
+      font-size: 1.8rem;
+      vertical-align: middle;
     }
   }
   .author {
@@ -803,7 +784,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
   
   p {
     margin: 10px 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.6;
   }
 }
@@ -819,6 +800,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
   .post-title {
     h1 {
       position: relative;
+      font-size: 2.8rem;
       &::before {
         content: "";
         position: absolute;
@@ -841,12 +823,38 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     color: #999;
   }
   .post-content {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 160%;
   }
   .post-nav {
     display: none;
   }
+
+  .addtoany_share_save_container, .post-count {
+    display: inline-block;
+    width: 49%;
+  }
+  .post-count {
+    text-align: right;
+    span {
+      margin-left: 20px;
+      color: #999;
+    }
+    i {
+      font-size: 1.8rem;
+      vertical-align: middle;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      color: #333;
+    }
+  }
+  a {
+    color: #189353;
+  }
+
 }
 
 .comments-section {
@@ -862,10 +870,15 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     text-align: right;
     .submit {
       margin: 0;
-      padding: 5px 20px;
+      padding: 10px 30px;
       background-color: #fff;
       border:1px solid #ccc;
       font-size: 1.2rem;
+      cursor: pointer;
+      &:hover {
+        background-color: #189353;
+        color: #fff;
+      }
     }
   }
   .comments-title {
@@ -881,6 +894,29 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     font-size: 1.6rem;
     line-height: 160%;
     color: #189353;
+  }
+  .comment-form-comment {
+    label[for='comment'] {
+      display: none;
+    }
+  }
+  .comment-form {
+    input[type='text'] {
+      height: 25px;
+      line-height: 25px;
+      outline: none;
+      width: 300px;
+    }
+    label {
+      display: inline-block;
+      width: 80px;
+    }
+    textarea {
+      outline: none;
+    }
+    .required {
+      color: #c00;
+    }
   }
 }
 
@@ -975,7 +1011,7 @@ aside {
   padding:10px;
   text-align:center;
   a {
-    background-color:#21759B;
+    background-color:#189353;
     border-radius: 3px;
     color: #FFFFFF;
     font-size: 12px;
@@ -984,7 +1020,7 @@ aside {
     outline:none;
     &.done, &:hover {
       background-color:#eee;
-      color:#21759B;
+      color:#189353;
     }
     &.done {
       cursor:not-allowed;
@@ -1010,8 +1046,10 @@ aside {
     border-top: 1px solid #ddd;
     overflow:hidden;
     font-size: 1.2rem;
+    color: #666;
     strong {
       font-weight: bold;
+      color: #333;
     }
   }
   p {
