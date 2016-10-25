@@ -9,7 +9,7 @@
 
 <?php if( have_posts() ) : while( have_posts() ): the_post() ?>
 
-<div id="content-section" class="content-section content-wrap">
+<div id="content-section" class="content-section content-wrap single-page">
     
     <?php get_sidebar() ?>
 

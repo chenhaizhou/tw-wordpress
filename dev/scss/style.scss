@@ -569,7 +569,7 @@ footer {
   color: #fff;
 }
 
-$banner-page: ("home": 1, "single": 2, "author": 3);
+$banner-page: ("home": 1, "single": 2, "author": 3, "tag": 3, "page": 4);
 
 @each $i, $j in $banner-page {
     .#{$i} .banner {
@@ -607,6 +607,7 @@ $banner-page: ("home": 1, "single": 2, "author": 3);
       color: #fff;
       a {
         text-transform: uppercase;
+        color: #fff;
       }
     }
     a {
@@ -1079,6 +1080,55 @@ article.post-wrap {
   text-align: center;
   color: #fff;
   background-color: #000;
+}
+
+
+.single-page {
+  margin-left: 2%;
+  .post-title {
+    width: 80%;
+    margin: 10px auto 10px;
+    line-height: 1.4;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #81CED4;
+  }
+  .post-description {
+    width: 80%;
+    margin:0 auto;
+    margin-top: 10px;
+    padding-top:10px;
+    border-top: 1px solid #ddd;
+    overflow:hidden;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #666;
+  }
+  .inner-content-section {
+    margin-top: 40px;
+  }
+  .tech-list {
+    margin-top: 40px;
+    overflow:hidden;
+    li {
+      float: left;
+      width: 120px;
+      margin: 5px 10px;
+      text-align: center;
+      strong {
+        display: block;
+        line-height: 1.6;
+        font-weight: normal;
+        font-size: 1.2rem;
+      }
+      &:first-child {
+        width: 240px;
+      }
+      a {
+        color: #666;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {

@@ -6,26 +6,19 @@
  */
 ?>
 <?php get_header() ?>
-<div class="archive-meta-container">
-    <div class="archive-head">
-        <h1><?php _e('Tag Archives', 'afford') ?></h1>
-    </div>
-    <div class="archive-description">
-        <?php
-        $afford_tag_description = term_description();
-        if (!empty($afford_tag_description)) {
-            echo $afford_tag_description;
-        } else {
-            printf(__('Archive of posts published in the tag:', 'afford').' %s', single_term_title('', false));
-        }
-        ?>
-    </div>
-
-</div><!-- Archive Meta Container ends -->
-
 <div id="content-section" class="content-section">
     <?php get_sidebar() ?>
     <div class="inner-content-section">
+        <div class="author-info-box">
+            <div class="count">
+                <strong>“<?php printf(' %s', single_term_title('', false)); ?>”相关文章，</strong>共有<span><?php printf(count_user_posts(get_the_author_meta( 'ID' ), 'post')) ?></span>篇
+            </div>
+            <div class="tag-info">
+                
+                </p>
+            </div>
+
+        </div>
 
               <?php if( have_posts() ) : ?>
 
