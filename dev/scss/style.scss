@@ -504,7 +504,7 @@ textarea {
 
 html, body {
   font-size: 62.5%;
-  font-family: "Open Sans", "sans serif", "微软雅黑", "Microsoft YaHei";
+  font-family: "微软雅黑", "Microsoft YaHei", "Open Sans", "sans serif";
 }
 
 $side-width: 220px;
@@ -823,7 +823,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     color: #999;
   }
   .post-content {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 160%;
   }
   .post-nav {
