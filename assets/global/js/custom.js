@@ -33,13 +33,6 @@ jQuery(document).ready(function($) {
        }
     });
 
-    $('.post-list').masonry({
-      // options...
-      itemSelector: '.post-item',
-      //columnWidth: 100,
-      isAnimated: true
-    });
-
     $.fn.postLike = function() {
       if ($(this).hasClass('done')) {
         alert('您已赞过该文章');

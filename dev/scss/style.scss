@@ -714,8 +714,11 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
   margin: 30px 0;
   .post-item {
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
     float: left;
     width: 23%;
+    height: 330px;
     margin: 10px 0 10px 2%;
     background-color: #F8F9F9;
   }
@@ -743,12 +746,19 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
   .post-content {
     color: #666;
     font-size: 1.4rem;
+    overflow: hidden;
+    height: 100%;
+    margin-bottom: 40px;
     p:first-child {
       margin-top: 0;
     }
   }
   .footer-bar {
+    position: absolute;
     overflow: hidden;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: #f1f3f3;
     font-size:1.2rem;
     color: #999;
