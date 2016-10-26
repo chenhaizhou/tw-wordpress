@@ -755,6 +755,16 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     .loop-thumbnail{
       text-align: center;
     }
+    li {
+      list-style: inherit;
+      margin-left: 20px;
+    }
+    blockquote {
+      font-style: italic;
+      border-left: 3px solid;
+      border-color: cadetblue;
+      margin-left: 20px;
+    }
   }
   .footer-bar {
     position: absolute;
@@ -840,7 +850,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
   }
   .post-content {
     font-size: 1.6rem;
-    line-height: 160%;
+    line-height: 180%;
   }
   .post-nav {
     display: none;
@@ -1019,7 +1029,7 @@ aside {
     font-size: 2rem;
   }
   .post-content {
-    margin: 20px 0;
+    margin: 20px 150px;
   }
 }
 
