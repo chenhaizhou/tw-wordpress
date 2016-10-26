@@ -752,6 +752,9 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     p:first-child {
       margin-top: 0;
     }
+    .loop-thumbnail{
+      text-align: center;
+    }
   }
   .footer-bar {
     position: absolute;
@@ -781,6 +784,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     color: #999;
     font-size: 1.2rem;
     font-weight: normal;
+    margin-left: 5px;
     a {
       color: #999;
     }
@@ -790,6 +794,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     time {
       font-size: 1.2rem;
       color: #999;
+      margin-left: 5px;
     }
   }
   
