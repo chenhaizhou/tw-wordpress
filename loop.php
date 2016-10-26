@@ -23,7 +23,7 @@ global $afford_loop_count;
     </div>
     <div class="post-content">
       <?php if ( has_post_thumbnail() ) { ?>
-        <div class="loop-thumbnail"><?php the_post_thumbnail( 'afford-thumb' ) ?></div>
+        <div class="loop-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo __('Permalink to', 'afford'). ' ' ?>"><?php the_post_thumbnail( 'afford-thumb' ) ?></a></div>
       <?php } ?>
       <?php the_excerpt() ?>
     </div>
