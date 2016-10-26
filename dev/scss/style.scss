@@ -755,10 +755,7 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
     .loop-thumbnail{
       text-align: center;
     }
-    li {
-      list-style: inherit;
-      margin-left: 20px;
-    }
+    
   }
   .footer-bar {
     position: absolute;
@@ -851,6 +848,10 @@ $nav-hover-color: (#1c97a6, #bf4781, #91942a, #c67227, #158947);
       border-color: cadetblue;
       margin-left: 20px;
       padding-left: 20px;
+    }
+    li {
+      list-style: inherit;
+      margin-left: 20px;
     }
   }
   .post-nav {
@@ -1072,8 +1073,9 @@ aside {
     padding-top:10px;
     border-top: 1px solid #ddd;
     overflow:hidden;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #666;
+    line-height: 24px;
     strong {
       font-weight: bold;
       color: #333;
