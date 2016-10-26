@@ -23,8 +23,9 @@
                     <?php endif ?>
                         
                         <div class="post-meta">
-                            
+                            <a class="author-avatar" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
                             <span class="face"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></span>
+                            </a>>
 
                             <?php 
                             echo '<span class="meta-author-url"><span class="author vcard">';
